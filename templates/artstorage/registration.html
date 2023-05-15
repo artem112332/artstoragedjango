@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'artstorage/css/style.css' %}">
+    <title>ArtStorage</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="main-nav__general general">
+                <ul class="general__list">
+                    <li class="general__item item">
+                        <a class="item__link" href="{% url 'authors' %}">Авторы</a>
+                    </li>
+                    <li class="general__item item">
+                        <a class="item__link" href="{% url 'pictures' %}">Картины</a>
+                    </li>
+                    <li class="general__item item">
+                        <a class="item__link" href="{% url 'projects' %}">Проекты</a>
+                    </li>
+                </ul>
+            </div>
+            <a class="logo" href="{% url 'home' %}">
+                <img src="{% static 'artstorage/img/logo.svg' %}" alt="Логотип ArtStorage.">
+            </a>
+            <div class="main-nav__user user">
+                <ul class="user__list">
+                    <li class="user__item item">
+                        <a class="item__link" href="{% url 'registration' %}">Регистрация</a>
+                    </li>
+                    <li class="user__item item">
+                        <a class="item__link" href="{% url 'authorization' %}">Вход</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="registration">
+            <h2 class="registration__author-title">Регистрация автора</h2>
+            <form class="registration__form form" action="#" method="post">
+                <fieldset class="form__container description">
+                    <label class="description__label label">
+                        <span class="label__text">Логин</span> 
+                        <input class="label__value" type="text" name="login">
+                    </label>
+                    <label class="description__label">
+                        <span class="label__text">Имя</span> 
+                        <input class="label__value" type="text" name="username">
+                    </label>
+                    <label class="description__label">
+                        <span class="label__text">Почта</span> 
+                        <input class="label__value" type="email" name="email">
+                    </label>
+                    <label class="description__label">
+                        <span class="label__text">Пароль</span> 
+                        <input class="label__value" type="password" name="password">
+                    </label>
+                </fieldset>
+                <button class="form__send-button">Зарегистрироваться</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="copyright-container">
+            <img class="copyright-container__picture" src="{% static 'artstorage/img/copyright.svg' %}" alt="Copyright">
+            <p class="copyright-container__title">ArtStorage Design</p>
+        </div>
+    </footer>
+
+</body>
+</html>

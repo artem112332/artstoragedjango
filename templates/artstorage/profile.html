@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'artstorage/css/style.css' %}">
+    <title>ArtStorage</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="main-nav__general reset-list general">
+                <ul class="general__list">
+                    <li class="general__item item">
+                        <a class="item__link" href="{% url 'authors' %}">Авторы</a>
+                    </li>
+                    <li class="general__item item">
+                        <a class="item__link" href="{% url 'pictures' %}">Картины</a>
+                    </li>
+                    <li class="general__item item">
+                        <a class="item__link" href="{% url 'projects' %}">Проекты</a>
+                    </li>
+                </ul>
+            </div>
+            <a class="logo" href="{% url 'home' %}">
+                <img src="{% static 'artstorage/img/logo.svg' %}" alt="Логотип ArtStorage.">
+            </a>
+            <div class="main-nav__user user">
+                <a class="user__profile-link profile-link" href="{% url 'profile' %}">
+                    <span class="profile-link__text">Профиль</span> 
+                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9H20V7H0V9Z" fill="white"></path>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="profile">
+            <h2 class="general-title">Профиль</h2>
+            <div class="profile__container">
+                <div class="profile__form form">
+                    <form class="form__user-information user-information" action="#" method="post">
+                        <fieldset class="user-information__container">
+                            <label class="user-information__label-photo" for="user-photo"></label>
+                            <input class="user-information__photo visually-hidden" type="file" name="photo" id="user-photo">
+                            <label class="visually-hidden" for="description-user">Описание пользователя</label>
+                            <textarea class="user-information__description" name="description-user" id="description-user" cols="30" rows="5" placeholder="О себе"></textarea>
+                            <output class="user-information__name">Александр Богдан</output>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="profile__more-information more-information">
+                    <ul class="more-information__list reset-list">
+                        <li class="more-information__item">
+                            Нравится <span>4</span>
+                        </li>
+                        <li class="more-information__item">
+                            Проекты <span>1</span>
+                        </li>
+                        <li class="more-information__item">
+                            Картины <span>5</span>
+                        </li>
+                        <li class="more-information__item">
+                            Подписки <span>20</span>
+                        </li>
+                        <li class="more-information__item">
+                            Подписчики <span>9</span>
+                        </li>
+                    </ul>
+
+                    <div class="more-information__project project">
+                        <div class="project__wrapper">
+                            <a class="project__add" href="{% url 'personal-profile-projects' %}"><span class="plus"></span></a>
+                            <span class="project__title">Проекты</span>
+                        </div>
+                        <div class="project__wrapper">
+                            <a class="project__add" href="{% url 'personal-profile-pictures' %}"><span class="plus"></span></a>
+                            <span class="project__title">Картины</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="copyright-container">
+            <img class="copyright-container__picture" src="{% static 'artstorage/img/copyright.svg' %}" alt="Copyright">
+            <p class="copyright-container__title">ArtStorage Design</p>
+        </div>
+    </footer>
+
+</body>
+</html>

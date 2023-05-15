@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'artstorage/css/style.css' %}">
+    <title>ArtStorage</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="main-nav__general reset-list general">
+                <ul class="general__list reset-list">
+                    <li class="general__item item">
+                        <a class="item__link" href="{% url 'authors' %}">Авторы</a>
+                    </li>
+                    <li class="general__item item">
+                        <a class="item__link" href="{% url 'pictures' %}">Картины</a>
+                    </li>
+                    <li class="general__item item">
+                        <a class="item__link" href="{% url 'projects' %}">Проекты</a>
+                    </li>
+                </ul>
+            </div>
+            <a class="logo" href="{% url 'home' %}">
+                <img src="{% static 'artstorage/img/logo.svg' %}" alt="Логотип ArtStorage.">
+            </a>
+            <div class="main-nav__user user">
+                <a class="user__profile-link profile-link" href="{% url 'profile' %}">
+                    <span class="profile-link__text">Профиль</span> 
+                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9H20V7H0V9Z" fill="white"></path>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="author-profile">
+            <h2 class="visually-hidden">Профиль автора</h2>
+            <img class="author-profile__photo" src="#" alt="">
+            <span class="author-profile__name">Данил Афанасьев</span>
+            <span class="author-profile__description">Начинающий Дизайнер, самоучка</span>
+            <div class="decorative-line"></div>
+            
+            <form class="author-profile__information-form information-form" action="#" method="get">
+                <button class="information-form__subscribe subscribe--change">Подписаться</button>
+            
+                <dl class="information-form__description-list description-list">
+                    <div class="description-list__item-container item-container">
+                        <dt class="item-container__item item-description">
+                            <output class="item-description__value">5</output>
+                        </dt>
+                        <dd class="item-container__item-description">Картин</dd>
+                    </div>
+
+                    <div class="description-list__item-container item-container">
+                        <dt class="item-container__item item-description">
+                            <output class="item-description__value">995</output>
+                        </dt>
+                        <dd class="item-container__item-description">Просмотров</dd>
+                    </div>
+
+                    <div class="description-list__item-container item-container">
+                        <dt class="item-container__item item-description">
+                            <output class="item-description__value">1337</output>
+                        </dt>
+                        <dd class="item-container__item-description">Подписки</dd>
+                    </div>
+
+                    <div class="description-list__item-container item-container">
+                        <dt class="item-container__item item-description">
+                            <output class="item-description__value">228</output>
+                        </dt>
+                        <dd class="item-container__item-description">Подписчики</dd>
+                    </div>
+
+                    <div class="description-list__item-container item-container">
+                        <dt class="item-container__item item-description">
+                            <output class="item-description__value">9</output>
+                        </dt>
+                        <dd class="item-container__item-description">Проекты</dd>
+                    </div>
+                </dl>
+            </form>
+
+            <div class="author-profile__pictures-container">
+                <img class="author-profile__pictures" src="#" alt="">
+                <div class="decorative-line"></div>
+                <img class="author-profile__pictures" src="#" alt="">
+            </div>
+
+            <div class="moving">
+                <ul class="moving__list reset-list">
+                    <li class="moving__back">
+                        <a href="#">
+                            <svg width="27" height="8" viewBox="0 0 27 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.646446 3.64645C0.451185 3.84171 0.451185 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM27 3.5L1 3.5V4.5L27 4.5V3.5Z" fill="white"></path>
+                            </svg>                                
+                        </a>
+                    </li>
+                    <li class="moving__item">
+                        <a class="moving__item-link" href="#">1</a> 
+                    </li>
+                    <li class="moving__item">
+                        <a class="moving__item-link" href="#">2</a> 
+                    </li>
+                    <li class="moving__item">
+                        <a class="moving__item-link" href="#">3</a> 
+                    </li>
+                    <li class="moving__next">
+                        <a href="#">
+                            <svg width="27" height="8" viewBox="0 0 27 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.3536 4.35355C26.5488 4.15829 26.5488 3.84171 26.3536 3.64645L23.1716 0.464466C22.9763 0.269204 22.6597 0.269204 22.4645 0.464466C22.2692 0.659728 22.2692 0.976311 22.4645 1.17157L25.2929 4L22.4645 6.82843C22.2692 7.02369 22.2692 7.34027 22.4645 7.53553C22.6597 7.7308 22.9763 7.7308 23.1716 7.53553L26.3536 4.35355ZM0 4.5H26V3.5H0V4.5Z" fill="white"></path>
+                            </svg>                                 
+                        </a>
+                    </li>
+                </ul>    
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="copyright-container">
+            <img class="copyright-container__picture" src="{% static 'artstorage/img/copyright.svg' %}" alt="Copyright">
+            <p class="copyright-container__title">ArtStorage Design</p>
+        </div>
+    </footer>
+
+</body>
+</html>
